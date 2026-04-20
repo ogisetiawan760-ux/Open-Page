@@ -86,55 +86,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Form validation and submission simulation
 const form = document.getElementById('inquiryForm');
-const formMessage = document.getElementById('formMessage');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    
-    if (!name || !email || !message) {
-        formMessage.style.color = '#F87171';
-        formMessage.innerText = '❌ Harap isi nama, email, dan pesan.';
-        return;
-    }
-    if (!email.includes('@') || !email.includes('.')) {
-        formMessage.style.color = '#F87171';
-        formMessage.innerText = '❌ Email tidak valid.';
-        return;
-    }
-    
-    // Simulate success
-    formMessage.style.color = '#4ADE80';
-    formMessage.innerText = '✅ Terima kasih! Tim kami akan segera menghubungi Anda.';
-    form.reset();
-    
-    // Optional: clear message after 5 seconds
-    setTimeout(() => {
-        formMessage.innerText = '';
-    }, 5000);
-});
 
-// Add counter animation for hero stats (simple)
-const statNumbers = document.querySelectorAll('.stat h3');
-function animateNumbers() {
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.innerText);
-        if (isNaN(target)) return;
-        let current = 0;
-        const increment = target / 50;
-        const updateNumber = () => {
-            current += increment;
-            if (current < target) {
-                stat.innerText = Math.floor(current) + '+';
-                requestAnimationFrame(updateNumber);
-            } else {
-                stat.innerText = target + '+';
-            }
-        };
-        updateNumber();
+// Inisialisasi Formspree Ajax
+if (typeof formspree !== 'undefined') {
+    formspree('initForm', {
+        formElement: '#inquiryForm',
+        formId: 'xzdyvgoq'
     });
+} else {
+    console.warn('Formspree belum dimuat');
 }
 // Trigger animation when hero in view
 const heroSection = document.querySelector('.hero');
