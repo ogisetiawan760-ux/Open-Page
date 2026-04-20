@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>OpenPage | Jasa Pembuatan Landing Page Profesional</title>
+    <title>LandingCraft | Jasa Pembuatan Landing Page Profesional</title>
     <meta name="description" content="Tingkatkan konversi bisnis Anda dengan landing page yang dirancang untuk hasil maksimal. Cepat, modern, dan terjangkau.">
-
     <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <!-- CSS Custom -->
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-    <!-- ===== NAVBAR ===== -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -37,21 +32,15 @@
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION ===== -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-container">
             <div class="hero-content">
                 <span class="badge">✨ Spesialis Konversi Tinggi</span>
-                <h1>
-                    Landing Page yang
-                    <span class="gradient-text">Mengubah Pengunjung</span>
-                    Menjadi Pelanggan
-                </h1>
+                <h1>Landing Page yang <span class="gradient-text">Mengubah Pengunjung</span> Menjadi Pelanggan</h1>
                 <p>Kami menciptakan landing page cepat, modern, dan dioptimalkan untuk konversi. Tingkatkan penjualan & lead bisnis Anda dengan desain yang terbukti efektif.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        Pesan Sekarang <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <a href="#contact" class="btn btn-primary">Pesan Sekarang <i class="fas fa-arrow-right"></i></a>
                     <a href="#portfolio" class="btn btn-outline">Lihat Portofolio</a>
                 </div>
                 <div class="hero-stats">
@@ -70,7 +59,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="floating-card">
+                <div class="floating-card card1">
                     <i class="fas fa-chart-line"></i>
                     <span>+45% Konversi</span>
                 </div>
@@ -78,16 +67,12 @@
                     <i class="fas fa-rocket"></i>
                     <span>Load &lt; 2 detik</span>
                 </div>
-                <img
-                    src="https://placehold.co/600x500/1E293B/FFFFFF?text=Landing+Page+Preview"
-                    alt="Landing Page Illustration"
-                    class="img-illus"
-                >
+                <img src="https://placehold.co/600x500/1E293B/FFFFFF?text=Landing+Page+Preview" alt="Landing Page Illustration" class="img-illus">
             </div>
         </div>
     </section>
 
-    <!-- ===== SERVICES SECTION ===== -->
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
@@ -120,7 +105,7 @@
         </div>
     </section>
 
-    <!-- ===== PORTFOLIO SECTION ===== -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-header">
@@ -152,7 +137,7 @@
                 <div class="portfolio-item" data-category="event">
                     <img src="https://placehold.co/400x300/0F172A/38BDF8?text=Event+Page" alt="Project 3">
                     <div class="overlay">
-                        <h4>Tech Summit 2026</h4>
+                        <h4>Tech Summit 2025</h4>
                         <p>Pendaftaran event meningkat 2x lipat</p>
                     </div>
                 </div>
@@ -181,7 +166,7 @@
         </div>
     </section>
 
-    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
@@ -232,7 +217,7 @@
         </div>
     </section>
 
-    <!-- ===== CONTACT / CTA SECTION ===== -->
+    <!-- Contact / CTA Section dengan Formspree integration (Ajax) -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-wrapper">
@@ -241,71 +226,41 @@
                     <h2>Mulai Proyek Landing Page Anda</h2>
                     <p>Konsultasi gratis untuk mendiskusikan kebutuhan bisnis Anda. Dapatkan penawaran terbaik dan landing page yang siap meledakkan konversi.</p>
                     <ul class="contact-details">
-                        <li><i class="fas fa-envelope"></i> ogisetiawan696@gmail.com</li>
-                        <!-- <li><i class="fas fa-phone-alt"></i> +62 812 3456 7890</li> -->
+                        <li><i class="fas fa-envelope"></i> ogisetiawan760@gmail.com</li>
+                        <li><i class="fas fa-phone-alt"></i> +62 821 1750 7462</li>
                         <li><i class="fab fa-whatsapp"></i> +62 821 1750 7462 (WhatsApp)</li>
                     </ul>
                 </div>
-
                 <div class="contact-form">
-                   <form action="https://formspree.io/f/xzdyvgoq" method="POST">
+                    <!-- Form dengan data-fs-* atribut untuk Formspree Ajax -->
+                    <form id="inquiryForm">
                         <div class="form-group">
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Nama lengkap"
-                                data-fs-field
-                                required
-                            >
-                            <span data-fs-error="name" style="font-size: 0.8rem; color: #F87171;"></span>
+                            <input type="text" id="name" name="name" placeholder="Nama lengkap" data-fs-field required>
+                            <span data-fs-error="name" style="font-size:0.8rem; color:#F87171;"></span>
                         </div>
                         <div class="form-group">
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Email aktif"
-                                data-fs-field
-                                required
-                            >
-                            <span data-fs-error="email" style="font-size: 0.8rem; color: #F87171;"></span>
+                            <input type="email" id="email" name="email" placeholder="Email aktif" data-fs-field required>
+                            <span data-fs-error="email" style="font-size:0.8rem; color:#F87171;"></span>
                         </div>
                         <div class="form-group">
-                            <input
-                                type="text"
-                                id="company"
-                                name="company"
-                                placeholder="Nama perusahaan / brand"
-                                data-fs-field
-                            >
+                            <input type="text" id="company" name="company" placeholder="Nama perusahaan / brand" data-fs-field>
                         </div>
                         <div class="form-group">
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="4"
-                                placeholder="Ceritakan kebutuhan landing page Anda..."
-                                data-fs-field
-                                required
-                            ></textarea>
-                            <span data-fs-error="message" style="font-size: 0.8rem; color: #F87171;"></span>
+                            <textarea id="message" name="message" rows="4" placeholder="Ceritakan kebutuhan landing page Anda..." data-fs-field required></textarea>
+                            <span data-fs-error="message" style="font-size:0.8rem; color:#F87171;"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block" data-fs-submit-btn>
-                            Kirim Permintaan <i class="fas fa-paper-plane"></i>
-                        </button>
-
-                        <!-- Pesan sukses dan error dari Formspree -->
-                        <div data-fs-success style="margin-top: 1rem; color: #4ADE80; text-align: center;"></div>
-                        <div data-fs-error  style="margin-top: 1rem; color: #F87171; text-align: center;"></div>
-                        <p id="formMessage" class="form-message"></p>
+                        <button type="submit" class="btn btn-primary btn-block" data-fs-submit-btn>Kirim Permintaan <i class="fas fa-paper-plane"></i></button>
+                        
+                        <!-- Notifikasi sukses & error dari Formspree -->
+                        <div data-fs-success style="margin-top:1rem; color:#4ADE80; text-align:center;"></div>
+                        <div data-fs-error style="margin-top:1rem; color:#F87171; text-align:center;"></div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -337,8 +292,13 @@
         </div>
     </footer>
 
+    <!-- JavaScript: Custom & Formspree Ajax -->
     <script src="script.js"></script>
+    <script>
+        // Inisialisasi Formspree Ajax
+        window.formspree = window.formspree || function() { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#inquiryForm', formId: 'xzdyvgoq' });
+    </script>
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-
 </body>
 </html>
