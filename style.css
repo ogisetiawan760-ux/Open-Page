@@ -489,11 +489,6 @@ input:focus, textarea:focus {
     justify-content: center;
 }
 
-.form-message {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-}
-
 /* Footer */
 .footer {
     background: #0B1120;
