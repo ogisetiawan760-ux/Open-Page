@@ -19,7 +19,6 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        // update active button
         filterButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const filterValue = btn.getAttribute('data-filter');
@@ -53,13 +52,12 @@ dots.forEach((dot, idx) => {
     dot.addEventListener('click', () => showTestimonial(idx));
 });
 
-// Auto slide testimonials every 5 seconds
+// Auto slide testimonials
 let autoSlide = setInterval(() => {
     let next = (currentIndex + 1) % testimonialCards.length;
     showTestimonial(next);
 }, 5000);
 
-// Pause auto slide on hover (optional)
 const sliderContainer = document.querySelector('.testimonial-slider');
 if (sliderContainer) {
     sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
@@ -84,20 +82,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form validation and submission simulation
-const form = document.getElementById('inquiryForm');
-
-
-// Inisialisasi Formspree Ajax
-if (typeof formspree !== 'undefined') {
-    formspree('initForm', {
-        formElement: '#inquiryForm',
-        formId: 'xzdyvgoq'
+// Animate hero stats when in view
+const statNumbers = document.querySelectorAll('.stat h3');
+function animateNumbers() {
+    statNumbers.forEach(stat => {
+        const target = parseInt(stat.innerText);
+        if (isNaN(target)) return;
+        let current = 0;
+        const increment = target / 50;
+        const updateNumber = () => {
+            current += increment;
+            if (current < target) {
+                stat.innerText = Math.floor(current) + '+';
+                requestAnimationFrame(updateNumber);
+            } else {
+                stat.innerText = target + '+';
+            }
+        };
+        updateNumber();
     });
-} else {
-    console.warn('Formspree belum dimuat');
 }
-// Trigger animation when hero in view
+
 const heroSection = document.querySelector('.hero');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -109,7 +114,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 observer.observe(heroSection);
 
-// Add hover effect on floating cards
+// Hover effect on floating cards
 const floatingCards = document.querySelectorAll('.floating-card');
 floatingCards.forEach(card => {
     card.addEventListener('mouseenter', () => {
@@ -121,4 +126,4 @@ floatingCards.forEach(card => {
     });
 });
 
-console.log('LandingCraft interactive website ready!');
+console.log('LandingCraft with Formspree Ajax ready');
